@@ -1,5 +1,5 @@
 
-
+// writ all
 var turn = "x";
 var playerX = 0;
 var playerO = 0;
@@ -7,7 +7,7 @@ var gameInPlay = false;
 var clickNum = 0;
 var winner1= false;
 
-
+// 
 $(".box").on("click", function (event) {
     console.log($(event.target).css("background-image", "none"));
     console.log(gameInPlay);
@@ -37,9 +37,11 @@ $(".box").on("click", function (event) {
         }
     };
 
+// start the game 
+// play x
     if (($(".num1").hasClass("x")) && ($(".num2").hasClass("x")) && ($(".num3").hasClass("x"))) {
         console.log("x winner");
-        playerX++;
+        playerX++; //to count x moves
         swal({
             title: "rock!",
             icon: "images/areebwin.png",
@@ -47,8 +49,7 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX)
         $('#playerA').text(playerX);
-        
-        winner1= true;
+        winner1= true; // if no one win
         reset()
 
     }
@@ -62,8 +63,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
@@ -77,8 +76,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
@@ -92,8 +89,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
@@ -107,8 +102,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
@@ -137,8 +130,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
@@ -152,11 +143,10 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerA').text(playerX);
-        //$('#playerJ').text("0");
-        
         winner1= true;
         reset()
     }
+    // now it is o player code 
     if (($(".num1").hasClass("o")) && ($(".num2").hasClass("o")) && ($(".num3").hasClass("o"))) {
         console.log("o winner");
         playerO++;
@@ -166,9 +156,7 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        // $('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        
         winner1= true;
         reset()
     }
@@ -181,11 +169,8 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        // $('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        
         winner1= true;
-     
         reset()
     }
     if (($(".num7").hasClass("o")) && ($(".num8").hasClass("o")) && ($(".num9").hasClass("o"))) {
@@ -199,9 +184,7 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        
         winner1= true;
-    
         reset()
     }
     if (($(".num1").hasClass("o")) && ($(".num4").hasClass("o")) && ($(".num7").hasClass("o"))) {
@@ -213,11 +196,8 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        
         winner1= true;
-    
         reset()
     }
     if (($(".num2").hasClass("o")) && ($(".num5").hasClass("o")) && ($(".num8").hasClass("o"))) {
@@ -229,9 +209,7 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        
         winner1= true;
         reset()
     }
@@ -245,7 +223,6 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX);
         $('#playerJ').text(playerO);
-        
         winner1= true;
         reset()
     }
@@ -261,7 +238,6 @@ $(".box").on("click", function (event) {
         $('#playerJ').text(playerO);
         gameInPlay = true
         winner1= true;
-   
         reset()
     }
     if (($(".num3").hasClass("o")) && ($(".num5").hasClass("o")) && ($(".num7").hasClass("o"))) {
@@ -276,33 +252,27 @@ $(".box").on("click", function (event) {
         $('#playerJ').text(playerO);
         gameInPlay = true
         winner1= true;
-        
-       
         reset()
     }
+    // for the win win 
     if (clickNum == 9 && winner1 != true) {
         swal(
           {
-           title: "Draw !!", 
-           text:"...Try agin!",
+           title: "win win!", 
+           text:"Try agin!",
            icon:"" 
           });
     }
-   
     });
-
-
-
-
+// reset button
 $("#reset").on("click", function (event) {
     location.reload();
 });
-
-
 function reset() {
     $('.box').removeClass("x")
     $('.box').removeClass("o")
 }
+// play again button
 $("#playAgin").on("click", function (event) {
     $('.box').removeAttr("style")
     $('.box').removeClass("x")
@@ -312,7 +282,3 @@ $("#playAgin").on("click", function (event) {
     winner1=false;
     clickNum=0;
 });
-
-
-
-
