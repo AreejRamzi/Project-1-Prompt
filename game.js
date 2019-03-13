@@ -23,13 +23,14 @@ $(".box").on("click", function (event) {
                 
                 $(event.target).addClass("x");
                 turn = "o";
+                clickNum++;
 
             }
             else {
                 $(event.target).css({
                     "background-image": "url('./Jass.png')",
                     "background-size": "157px 147px"
-                });
+                }); clickNum++;
                 $(event.target).addClass("o");
                 turn = "x";
             }
@@ -46,8 +47,8 @@ $(".box").on("click", function (event) {
         console.log(playerO)
         console.log(playerX)
         $('#playerA').text(playerX);
-        clickNum++;
-        gameInPlay = true
+        
+        winner1= true;
         reset()
 
     }
@@ -62,7 +63,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num7").hasClass("x")) && ($(".num8").hasClass("x")) && ($(".num9").hasClass("x"))) {
@@ -76,7 +78,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num1").hasClass("x")) && ($(".num4").hasClass("x")) && ($(".num7").hasClass("x"))) {
@@ -90,7 +93,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num2").hasClass("x")) && ($(".num5").hasClass("x")) && ($(".num8").hasClass("x"))) {
@@ -104,7 +108,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num3").hasClass("x")) && ($(".num6").hasClass("x")) && ($(".num9").hasClass("x"))) {
@@ -118,7 +123,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num1").hasClass("x")) && ($(".num5").hasClass("x")) && ($(".num9").hasClass("x"))) {
@@ -132,7 +138,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num3").hasClass("x")) && ($(".num5").hasClass("x")) && ($(".num7").hasClass("x"))) {
@@ -146,7 +153,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         $('#playerA').text(playerX);
         //$('#playerJ').text("0");
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num1").hasClass("o")) && ($(".num2").hasClass("o")) && ($(".num3").hasClass("o"))) {
@@ -160,7 +168,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         // $('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
+        
+        winner1= true;
         reset()
     }
     if (($(".num4").hasClass("o")) && ($(".num5").hasClass("o")) && ($(".num6").hasClass("o"))) {
@@ -174,7 +183,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         // $('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
+        
+        winner1= true;
      
         reset()
     }
@@ -189,7 +199,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
+        
+        winner1= true;
     
         reset()
     }
@@ -204,7 +215,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
+        
+        winner1= true;
     
         reset()
     }
@@ -219,8 +231,8 @@ $(".box").on("click", function (event) {
         console.log(playerX);
         //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
-  
+        
+        winner1= true;
         reset()
     }
     if (($(".num3").hasClass("o")) && ($(".num6").hasClass("o")) && ($(".num9").hasClass("o"))) {
@@ -232,10 +244,9 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
-        gameInPlay = true
-  
+        
+        winner1= true;
         reset()
     }
     if (($(".num1").hasClass("o")) && ($(".num5").hasClass("o")) && ($(".num9").hasClass("o"))) {
@@ -247,9 +258,9 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        //$('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
         gameInPlay = true
+        winner1= true;
    
         reset()
     }
@@ -262,13 +273,21 @@ $(".box").on("click", function (event) {
         });
         console.log(playerO)
         console.log(playerX);
-        // $('#playerJ').text(playerO);
         $('#playerJ').text(playerO);
         gameInPlay = true
+        winner1= true;
+        
        
         reset()
     }
-
+    if (clickNum == 9 && winner1 != true) {
+        swal(
+          {
+           title: "Draw !!", 
+           text:"...Try agin!",
+           icon:"" 
+          });
+    }
    
     });
 
@@ -290,7 +309,10 @@ $("#playAgin").on("click", function (event) {
     $('.box').removeClass("o")
     turn = "x"
     gameInPlay = false
+    winner1=false;
+    clickNum=0;
 });
+
 
 
 

@@ -1,15 +1,18 @@
 button{
     font-family: "Comic Sans MS", cursive, sans-serif;
-    /* float: right; */
+    margin-left: 600px;
     width: 162px;
     height: 80px;
     color: #796d59;
     font-size: 20px;
-    /* margin-right: 150px;
-    margin-top: 0px; */
     border: 5px #928f8a;
     background-color:rgba(255, 255, 255, 0.596);
     border-style: groove;
+
+}
+.button a{
+    color: #796d59;
+    text-decoration: none;
 }
 h1 {
     font-family: "Comic Sans MS", cursive, sans-serif;
